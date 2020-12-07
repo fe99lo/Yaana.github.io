@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="author" content="Felix Onkangi"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css"> 
+  <script src="functionality.js"></script> 
+  <script src="user.js"></script> 
+  <script src="motion.js"></script> 
+  <link rel="script" href="https://www.google.com/url?q=http://api.vsee.com/js/vseepresence.js&amp;sa=D&amp;ust=1606431807981000&amp;usg=AOvVaw3SesXw8E3kCoT0lxsBfKDk"> 
+ </head>
+ <body>
+  <nav> 
+   <ul class="drop-down closed"> 
+    <li> <a href="#" class="nav-button">Home</a> </li> 
+    <li><a href="home.html">Home</a></li> 
+    <li><a href="about..html">About</a></li> 
+    <li><a href="notes.html">Take notes</a></li> 
+    <li><a href="contact.html">Contact</a></li> 
+   </ul> 
+  </nav> 
+  <script>
+
+(function() {
+    this.parentNode.parentNode.classList.toggle('closed')
+  }, false);
+})();
+ 
+</script> 
+  <title>BMI Dashboard&lt;style&gt;
+  div:hover {
+    transform: rotate(360deg);
+    transition: all 1s ease-out;
+  }
+   &lt;/style&gt;
+ </title> 
+  <script>
+    function log(message) {
+      document.getElementById("log").textContent += message + "\n";
+    }
+  </script> 
+  <script src="https://chr15m.github.io/bugout/bugout.min.js" type="application/javascript"></script> 
+  <style>
+#input { border-bottom: 1px solid #ccc; background-color: #383838; padding: 0.25em; outline: 0; }
+    #input::before { content: "> "; }
+</style>   
+  <pre id="log"></pre> 
+  <pre id="input" contenteditable="true"></pre> 
+  <video id="video" autoplay> 
+   <script>
+var constraints = {
+  audio: false,
+  video: { width: 440, height: 280 }
+};
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(success)
+  .catch(error);
+
+function success(stream) {
+  var video = document.getElementById('video');
+  video.srcObject = stream;
+}
+
+function error(error) {
+  console.log(error);
+}
+var video = document.getElementById('video');
+
+var canvas = document.createElement('canvas');
+canvas.width = 440;
+canvas.height = 280;
+var context = canvas.getContext('2d');
+
+setInterval(capture, 100);
+
+function capture() {
+  context.drawImage(video, 0, 0, 440, 280);
+
+  // do other stuff
+var dataURL = canvas.toDataURL();
+ context.globalCompositeOperation = 'difference';
+
+
+}
+getImageData()
+
+putImageData()
+
+</script> 
+  </video> 
+  <div class="display-4 text-center">
+   BMI Dashboard
+  </div> 
+  <div class="container" style="margin-top: 40px;"> 
+   <div class="row"> 
+    <div class="col-md-6" style="padding-bottom: 5px;"> 
+     <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px; " onclick="location.reload(true);">Clear</button> 
+    </div> 
+    <div class="col-md-6"> 
+     <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px;" onclick="BMIFunction()">Calculate</button> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container"> 
+   <div class="row justify-content-center"> 
+    <div class="col-sm-4"> 
+     <h4>Weight</h4> 
+     <form> 
+      <div class="form-group"> 
+       <table style="width:100%"> 
+        <tbody>
+         <tr> 
+          <td><input id="lbsInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Pounds..."> </td> 
+          <td>lbs</td> 
+         </tr> 
+         <tr> 
+          <td><input id="kgInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Kilograms..."> </td> 
+          <td>kg</td> 
+         </tr> 
+         <tr> 
+          <td><input id="gmInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Grams..."></td> 
+          <td>gm</td> 
+         </tr> 
+         <tr> 
+          <td><input id="ozInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Ounces..."></td> 
+          <td>oz</td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+     </form> 
+    </div> 
+    <div class="col-sm-4"> 
+     <h4>Height</h4> 
+     <form> 
+      <div class="form-group"> 
+       <table style="width:100%"> 
+        <tbody>
+         <tr> 
+          <td><input id="cmInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Centimeters..."></td> 
+          <td>cm</td> 
+         </tr> 
+         <tr> 
+          <td><input id="inchInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Inches..."></td> 
+          <td>in</td> 
+         </tr> 
+         <tr> 
+          <td><input id="mInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Meters..."></td> 
+          <td>m</td> 
+         </tr> 
+         <tr> 
+          <td><input id="ftInput" type="number" step="0.0001" class="form-control form-control-lg" placeholder="Feet..."></td> 
+          <td>ft</td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+     </form> 
+    </div> 
+    <div class="col-sm-4"> 
+     <h4>Health Index</h4> 
+     <form> 
+      <div class="form-group"> 
+       <div class="indexcol" id="bmi" style="padding-left: 20px; padding-top: 10px;"> 
+        <p>Body Mass Index...</p> 
+       </div> 
+       <div class="indexcol" id="calIn" style="padding-left: 20px; padding-top: 10px;"> 
+        <p>Calorie In...</p> 
+       </div> 
+       <div class="indexcol" id="calOut" style="padding-left: 20px; padding-top: 10px;"> 
+        <p>Calorie Out...</p> 
+       </div> 
+       <div class="indexcol" id="comment" style="padding-left: 20px; padding-top: 10px;"> 
+        <p>Comment...</p> 
+       </div> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="footer" style="font-size: 14px;"> 
+   <!-- Copyright --> 
+   <div class="footer-copyright text-center py-3">
+    © 2020 Copyright | 
+    <style="text-decoration: none; color: white"> 
+     <b>Yana Media by Felix production</b> 
+    </style="text-decoration:>
+   </div> 
+   <!-- Copyright --> 
+  </div>  
+  <script>
+  log("Welcome to the Yana telemedicine!");
+
+var b = Bugout("bugout-chat-tutorial");
+b.on("seen", function(address) { log(address+ " [ seen ]"); });
+log(b.address() + " [ me ]");
+
+b.on("message", function(address, message) {
+    log(address + ": " + message);
+  });
+
+document.getElementById("input").onkeydown = function(ev) {
+    if (ev.keyCode == 13) {
+      if (b.lastwirecount) {
+        b.send(ev.target.textContent);
+        ev.target.textContent = "";
+      }
+      ev.preventDefault();
+    }
+  }
+
+</script> 
+  <footer> 
+   <p class="programminghero">Learned and developed this site with <a href="http://www.programming-hero.com">Programming Hero</a></p> 
+  </footer>
+ </body>
+</html>
